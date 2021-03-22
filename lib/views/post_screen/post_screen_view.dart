@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:hackernews/controllers/post_screen/post_screen_controller.dart';
+import 'package:html/parser.dart' show parse;
 
 class PostScreenView extends StatelessWidget {
   final String objectID;
@@ -119,7 +120,8 @@ class PostScreenView extends StatelessWidget {
                                       for (var comment in postViewController
                                           .postViewDataList.value.children)
                                         ListTile(
-                                          title: Html(data: comment.text),
+                                          title:
+                                              Html(data: comment.text) ?? 'NA',
                                         )
                                     ],
                                   )

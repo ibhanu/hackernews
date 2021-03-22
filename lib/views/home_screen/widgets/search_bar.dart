@@ -55,7 +55,7 @@ Widget buildFloatingSearchBar(
                             child: Column(
                               children: [
                                 Text(
-                                  post.title,
+                                  post.title ?? 'NA',
                                   textAlign: TextAlign.center,
                                 ),
                                 SizedBox(
